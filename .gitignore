@@ -1,0 +1,36 @@
+## Build artifacts
+bin/
+obj/
+build/
+dist/
+*.dll
+*.exe
+*.log
+*.tmp
+*.cache
+*.pdb
+
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vssscc
+*.vsp
+*.vspscc
+*.cache
+
+## VS Code
+.vscode/
+
+## Systemowe
+.DS_Store
+Thumbs.db
+
+## JSON backupy
+*.backup.json
+
+## Node/Python (jeśli używasz)
+node_modules/
+__pycache__/
