@@ -1,0 +1,33 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona startowa</title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>@Model.Message</h1>
+
+        <!-- Przykładowe linki do logowania i rejestracji -->
+        <div>
+            <a href="/Identity/Account/Login">Zaloguj się</a>
+            <a href="/Identity/Account/Register">Zarejestruj się</a>
+        </div>
+
+        <!-- Możesz dodać inne linki, np. do sekcji o aplikacji -->
+        <div>
+            <a href="/Home/Privacy">Polityka prywatności</a>
+        </div>
+
+        <!-- Jeśli masz jakąś funkcjonalność, np. listę usług, to dodaj ją tutaj -->
+        <div>
+            <!-- Przykładowy przycisk do innej sekcji -->
+            <a href="/SomeOtherController/SomeAction">Inna sekcja</a>
+        </div>
+    </div>
+</body>
+</html>

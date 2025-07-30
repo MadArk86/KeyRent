@@ -1,0 +1,44 @@
+﻿@model KeyRent.Models.Rental
+
+@{
+    ViewData["Title"] = "Edit Rental";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="UserId">User</label>
+        <select asp-for="UserId" class="form-control">
+            @foreach (var user in (List<KeyRent.Models.User>)ViewBag.Users)
+            {
+                <option value="@user.Id" selected="@(user.Id == Model.UserId ? "selected" : null)">@user.FirstName @user.LastName</option>
+            }
+        </select>
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LockerId">Locker</label>
+        <select asp-for="LockerId" class="form-control">
+            @foreach (var locker in (List<KeyRent.Models.Locker>)ViewBag.Lockers)
+            {
+                <option value="@locker.Id" selected="@(locker.Id == Model.LockerId ? "selected" : null)">@locker.Location</option>
+            }
+        </select>
+        <span asp-validation-for="LockerId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RentalStart">Rental Start</label>
+        <input asp-for="RentalStart" type="date" class="form-control" value="@Model.RentalStart.ToString("yyyy-MM-dd")" />
+        <span asp-validation-for="RentalStart" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RentalEnd">Rental End (optional)</label>
+        <input asp-for="RentalEnd" type="date" class="form-control" value="@(Model.RentalEnd.HasValue ? Model.RentalEnd.Value.ToString("yyyy-MM-dd") : "")" />
+        <span asp-validation-for="RentalEnd" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<a class="btn btn-secondary" href="@Url.Action("IndexRentals", "Rent")">Back to List</a>

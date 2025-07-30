@@ -1,0 +1,37 @@
+﻿@model IEnumerable<KeyRent.Models.Rental>
+
+@{
+    ViewData["Title"] = "Rentals";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Locker Location</th>
+            <th>Rental Start</th>
+            <th>Rental End</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in Model)
+        {
+            <tr>
+                <td>@rental.User.FirstName @rental.User.LastName</td>
+                <td>@rental.Locker.Location</td>
+                <td>@rental.RentalStart.ToString("yyyy-MM-dd")</td>
+                <td>@(rental.RentalEnd.HasValue ? rental.RentalEnd.Value.ToString("yyyy-MM-dd") : "Ongoing")</td>
+                <td>
+                    <a class="btn btn-info" href="@Url.Action("DetailsRental", "Rent", new { id = rental.Id })">Details</a>
+                    <a class="btn btn-warning" href="@Url.Action("EditRental", "Rent", new { id = rental.Id })">Edit</a>
+                    <a class="btn btn-danger" href="@Url.Action("DeleteRental", "Rent", new { id = rental.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("CreateRental", "Rent")">Create New Rental</a>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyRent", "KeyRent\KeyRent.csproj", "{EB508BF0-B8CA-460D-957C-BC06360B24BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keyrent.UI.Tests", "TestUI\Keyrent.UI.Tests.csproj", "{1BA01205-9F49-4CEC-9D5A-717D38A61327}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB508BF0-B8CA-460D-957C-BC06360B24BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB508BF0-B8CA-460D-957C-BC06360B24BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB508BF0-B8CA-460D-957C-BC06360B24BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB508BF0-B8CA-460D-957C-BC06360B24BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA01205-9F49-4CEC-9D5A-717D38A61327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA01205-9F49-4CEC-9D5A-717D38A61327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA01205-9F49-4CEC-9D5A-717D38A61327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA01205-9F49-4CEC-9D5A-717D38A61327}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

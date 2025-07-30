@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+    var title = ViewData["Title"] ?? "Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title - Panel Admina</title>
+
+    <link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">KeyRent</div>
+            </a>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Admin")">
+                    <i class="fas fa-users"></i>
+                    <span>Użytkownicy</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Logout", "Account")">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Wyloguj</span>
+                </a>
+            </li>
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <h4 class="m-0">@title</h4>
+                </nav>
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto text-center">
+                    <span>&copy; @DateTime.Now.Year KeyRent</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/sb-admin-2/js/sb-admin-2.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

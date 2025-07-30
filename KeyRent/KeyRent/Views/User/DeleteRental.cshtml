@@ -1,0 +1,28 @@
+﻿@model KeyRent.Models.Rental
+
+@{
+    ViewData["Title"] = "Delete Rental";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Are you sure you want to delete this rental?</p>
+
+<dl class="dl-horizontal">
+    <dt>User</dt>
+    <dd>@Model.User.FirstName @Model.User.LastName</dd>
+    <dt>Locker</dt>
+    <dd>@Model.Locker.Location</dd>
+    <dt>Rental Start</dt>
+    <dd>@Model.RentalStart.ToString("yyyy-MM-dd")</dd>
+    <dt>Rental End</dt>
+    <dd>@(Model.RentalEnd.HasValue ? Model.RentalEnd.Value.ToString("yyyy-MM-dd") : "Ongoing")</dd>
+</dl>
+
+<!-- Formularz z poprawnym przekazywaniem id -->
+<form asp-action="DeleteRentalConfirmed" method="post">
+    <!-- Przekazywanie id do POST -->
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="@Url.Action("IndexRentals", "Rent")">Cancel</a>
+</form>

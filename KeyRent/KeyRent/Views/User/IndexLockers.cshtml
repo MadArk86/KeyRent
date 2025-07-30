@@ -1,0 +1,33 @@
+﻿@model IEnumerable<KeyRent.Models.Locker>
+
+@{
+    ViewData["Title"] = "Available Lockers";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Location</th>
+            <th>Available</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var locker in Model)
+        {
+            <tr>
+                <td>@locker.Location</td>
+                <td>@(locker.IsAvailable ? "Yes" : "No")</td>
+                <td>
+                    <a class="btn btn-info" href="@Url.Action("DetailsLocker", "Rent", new { id = locker.Id })">Details</a>
+                    <a class="btn btn-warning" href="@Url.Action("EditLocker", "Rent", new { id = locker.Id })">Edit</a>
+                    <a class="btn btn-danger" href="@Url.Action("DeleteLocker", "Rent", new { id = locker.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("CreateLocker", "Rent")">Create New Locker</a>

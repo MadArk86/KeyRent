@@ -1,0 +1,56 @@
+﻿@model IEnumerable<KeyRent.ViewModels.UserViewModel>
+
+@{
+    ViewData["Title"] = "User List";
+    var currentSort = ViewData["CurrentSort"]?.ToString();
+    var nameSortParam = string.IsNullOrEmpty(currentSort) ? "name_desc" : "";
+    var emailSortParam = currentSort == "email" ? "email_desc" : "email";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!-- Wyszukiwanie użytkowników -->
+<form method="get">
+    <div class="form-group">
+        <label for="searchQuery">Search by Name or Email:</label>
+        <input type="text" id="searchQuery" name="searchQuery" class="form-control" placeholder="Enter search term..." value="@ViewData["CurrentSearchQuery"]" />
+        <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </div>
+</form>
+
+<!-- Tabela użytkowników -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a href="@Url.Action("IndexUsers", "User", new { sortOrder = nameSortParam })">First Name</a>
+            </th>
+            <th>
+                <a href="@Url.Action("IndexUsers", "User", new { sortOrder = nameSortParam })">Last Name</a>
+            </th>
+            <th>
+                <a href="@Url.Action("IndexUsers", "User", new { sortOrder = emailSortParam })">Email</a>
+            </th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>
+                    <a class="btn btn-warning" href="@Url.Action("EditUser", "User", new { id = user.Id })">Edit</a>
+                    <a class="btn btn-danger" href="@Url.Action("DeleteUser", "User", new { id = user.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Przycisk do tworzenia nowego użytkownika -->
+<a class="btn btn-success" href="@Url.Action("CreateUser", "User")">Create New User</a>

@@ -1,0 +1,16 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Thank you for registering. Please check your email to confirm your account.</p>
+
+@if (Model.DisplayConfirmAccountLink)
+{
+    <p>
+        <a href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
+    </p>
+}

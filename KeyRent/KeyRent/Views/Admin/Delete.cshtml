@@ -1,0 +1,29 @@
+﻿@model KeyRent.ViewModels.UserViewModel
+@{
+    ViewData["Title"] = "Usuń użytkownika";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="h3 mb-4 text-gray-800">Usuń użytkownika</h1>
+
+<div class="alert alert-warning">
+    <strong>Czy na pewno chcesz usunąć tego użytkownika?</strong>
+</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Imię</dt>
+    <dd class="col-sm-9">@Model.FirstName</dd>
+
+    <dt class="col-sm-3">Nazwisko</dt>
+    <dd class="col-sm-9">@Model.LastName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
+

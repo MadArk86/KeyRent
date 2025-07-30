@@ -1,0 +1,18 @@
+﻿@model KeyRent.Models.Locker
+
+@{
+    ViewData["Title"] = "Locker Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<dl class="dl-horizontal">
+    <dt>Location</dt>
+    <dd>@Model.Location</dd>
+    <dt>Available</dt>
+    <dd>@(Model.IsAvailable ? "Yes" : "No")</dd>
+</dl>
+
+<a class="btn btn-warning" href="@Url.Action("EditLocker", "Rent", new { id = Model.Id })">Edit</a>
+<a class="btn btn-danger" href="@Url.Action("DeleteLocker", "Rent", new { id = Model.Id })">Delete</a>
+<a class="btn btn-secondary" href="@Url.Action("IndexLockers", "Rent")">Back to List</a>

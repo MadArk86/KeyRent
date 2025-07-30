@@ -1,0 +1,22 @@
+﻿@model KeyRent.Models.Rental
+
+@{
+    ViewData["Title"] = "Rental Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<dl class="dl-horizontal">
+    <dt>User</dt>
+    <dd>@Model.User.FirstName @Model.User.LastName</dd>
+    <dt>Locker</dt>
+    <dd>@Model.Locker.Location</dd>
+    <dt>Rental Start</dt>
+    <dd>@Model.RentalStart.ToString("yyyy-MM-dd")</dd>
+    <dt>Rental End</dt>
+    <dd>@(Model.RentalEnd.HasValue ? Model.RentalEnd.Value.ToString("yyyy-MM-dd") : "Ongoing")</dd>
+</dl>
+
+<a class="btn btn-warning" href="@Url.Action("EditRental", "Rent", new { id = Model.Id })">Edit</a>
+<a class="btn btn-danger" href="@Url.Action("DeleteRental", "Rent", new { id = Model.Id })">Delete</a>
+<a class="btn btn-secondary" href="@Url.Action("IndexRentals", "Rent")">Back to List</a>
