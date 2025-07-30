@@ -1,29 +1,36 @@
-# Node modules
-node_modules/
-dist/
+## Build artifacts
+bin/
+obj/
 build/
-.cache/
+dist/
+*.dll
+*.exe
 *.log
+*.tmp
+*.cache
+*.pdb
 
-# Dependency directories
-bower_components/
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vssscc
+*.vsp
+*.vspscc
+*.cache
 
-# CSS/SCSS build artifacts
-*.css
-*.css.map
+## VS Code
+.vscode/
 
-# OS/system files
+## Systemowe
 .DS_Store
 Thumbs.db
 
-# VSCode
-.vscode/
+## JSON backupy
+*.backup.json
 
-# Env files
-.env
-.env.*
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+## Node/Python (jeśli używasz)
+node_modules/
+__pycache__/
