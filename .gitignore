@@ -38,3 +38,4 @@ __pycache__/
 ## Konfiguracje lokalne i kopie
 appsettings.Development.json
 wwwroot — kopia/
+wwwroot
