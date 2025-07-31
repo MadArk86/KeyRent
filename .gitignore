@@ -34,3 +34,7 @@ Thumbs.db
 ## Node/Python (jeśli używasz)
 node_modules/
 __pycache__/
+
+## Konfiguracje lokalne i kopie
+appsettings.Development.json
+wwwroot — kopia/
