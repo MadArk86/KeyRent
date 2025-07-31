@@ -3,6 +3,7 @@ bin/
 obj/
 build/
 dist/
+wwwroot/
 *.dll
 *.exe
 *.log
