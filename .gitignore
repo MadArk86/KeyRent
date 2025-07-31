@@ -3,7 +3,6 @@ bin/
 obj/
 build/
 dist/
-wwwroot/
 *.dll
 *.exe
 *.log
@@ -20,7 +19,6 @@ wwwroot/
 *.vssscc
 *.vsp
 *.vspscc
-*.cache
 
 ## VS Code
 .vscode/
@@ -39,4 +37,3 @@ __pycache__/
 ## Konfiguracje lokalne i kopie
 appsettings.Development.json
 wwwroot — kopia/
-wwwroot
