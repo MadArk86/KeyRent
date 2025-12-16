@@ -30,14 +30,15 @@ Thumbs.db
 ## JSON backupy
 *.backup.json
 
-## Node/Python (jeśli używasz)
+## Node/Python
 node_modules/
 __pycache__/
+
+## Biblioteki zewnętrzne (DODAJ TO!)
+wwwroot/vendor/
+wwwroot/lib/
 
 ## Konfiguracje lokalne i kopie
 appsettings.Development.json
 wwwroot — kopia/
-
-## Biblioteki zewnętrzne (vendor)
-wwwroot/vendor/
-wwwroot/lib/
+wwwroot/root/
