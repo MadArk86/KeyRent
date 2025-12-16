@@ -1,0 +1,5 @@
+# Traktuj te pliki jako "vendor" - nie liczą się do statystyk języków
+wwwroot/vendor/** linguist-vendored
+wwwroot/vendor/fontawesome-free/** linguist-vendored
+wwwroot/vendor/datatables/** linguist-vendored
+wwwroot/css/sb-admin-2.css linguist-vendored
