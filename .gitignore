@@ -41,4 +41,12 @@ wwwroot/lib/
 ## Konfiguracje lokalne i kopie
 appsettings.Development.json
 wwwroot — kopia/
+<<<<<<< Updated upstream
 wwwroot/root/
+=======
+<<<<<<< HEAD
+wwwroot/root/
+=======
+wwwroot/root/
+>>>>>>> 955ded70ed3c5ae2c11bd6bf79739352cc3aee5c
+>>>>>>> Stashed changes
